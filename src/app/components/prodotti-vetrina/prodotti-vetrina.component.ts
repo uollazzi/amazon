@@ -18,9 +18,19 @@ export class ProdottiVetrinaComponent implements OnInit {
   ngOnInit(): void {
     this.prodotti = this.prodottiService.getAll();
 
-    // let mario = new User("Mario", "Rossi");
-    // console.log(mario.nomeCompleto);
-    // mario.eta = 87;
-    // console.log(mario.eta);
+    // console.log("INIZIO");
+
+    // try {
+    //   let mario = new User("Mario", "Rossi");
+    //   console.log(mario.nomeCompleto);
+
+    //   mario.eta = 879; // TODO: user input
+    //   console.log(mario.eta);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+    // console.log("FINE");
+
   }
 }
