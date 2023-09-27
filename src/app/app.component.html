@@ -1,8 +1,34 @@
 <app-header></app-header>
 <div class="container">
-  <app-carrello></app-carrello>
-  <hr>
-  <app-prodotti-vetrina></app-prodotti-vetrina>
+  <!-- <div class="btn-group">
+    <button type="button" class="btn btn-primary" (click)="naviga('v')">Vetrina</button>
+    <button type="button" class="btn btn-primary" (click)="naviga('c')">Carrello</button>
+  </div>
+
+  <div *ngIf="paginaCorrente == 'c'">
+    <app-carrello></app-carrello>
+    <hr>
+  </div>
+
+  <div *ngIf="paginaCorrente == 'v'">
+    <app-categorie-selettore></app-categorie-selettore>
+    <hr>
+    <app-prodotti-vetrina></app-prodotti-vetrina>
+  </div> -->
+
+  <!-- <div *ngIf="paginaCorrente == 'c'; then divCarrello else divVetrina"></div>
+
+  <ng-template #divCarrello>
+    <app-carrello></app-carrello>
+    <hr>
+  </ng-template>
+
+  <ng-template #divVetrina>
+    <app-categorie-selettore></app-categorie-selettore>
+    <hr>
+    <app-prodotti-vetrina></app-prodotti-vetrina>
+  </ng-template> -->
+
 
   <router-outlet></router-outlet>
 </div>

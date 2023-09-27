@@ -16,7 +16,12 @@ export class ProdottiVetrinaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.prodotti = this.prodottiService.getAll();
+    this.prodottiService.getProducts().subscribe(dati => {
+      console.log("Nuovi dati ricevuti");
+      this.prodotti = dati;
+    });
+
+    // this.prodotti = this.prodottiService.getAll();
 
     // console.log("INIZIO");
 
