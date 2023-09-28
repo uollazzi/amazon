@@ -1,5 +1,5 @@
 <div *ngIf="prodotto" class="card" style="width: 24rem;">
-  <img [src]="prodotto.image" class="card-img-top">
+  <img [src]="prodotto.image" class="card-img-top img-thumbnail">
   <div class="card-body">
     <h5 class="card-title">{{prodotto.title}}</h5>
     <p class="card-text">Prezzo: {{prodotto.price | currency:"EUR"}}</p>

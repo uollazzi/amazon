@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Prodotto } from 'src/app/models/prodotto';
 import { User } from 'src/app/models/user';
 import { ProdottiService } from 'src/app/services/prodotti.service';
+import { Colore } from 'src/app/models/enums';
+import { catchError, of } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-prodotti-vetrina',
@@ -11,15 +14,26 @@ import { ProdottiService } from 'src/app/services/prodotti.service';
 export class ProdottiVetrinaComponent implements OnInit {
   prodotti: Prodotto[] = [];
 
+  errorMessage = "";
+
+  Colore = Colore;
+
   constructor(private prodottiService: ProdottiService) {
 
   }
 
   ngOnInit(): void {
-    this.prodottiService.getProducts().subscribe(dati => {
-      console.log("Nuovi dati ricevuti");
-      this.prodotti = dati;
-    });
+    this.prodottiService.getProducts()
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          this.errorMessage = err.message;
+          return of([]);
+        })
+      )
+      .subscribe(dati => {
+        console.log("Nuovi dati ricevuti");
+        this.prodotti = dati;
+      });
 
     // this.prodotti = this.prodottiService.getAll();
 
