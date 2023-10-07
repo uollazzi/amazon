@@ -8,3 +8,11 @@ img {
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+/* input.ng-invalid.ng-touched {
+  border: solid red 1px;
+}
+
+input.ng-valid.ng-touched {
+  border: solid rgb(0, 135, 25) 1px;
+} */

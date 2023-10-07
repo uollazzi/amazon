@@ -2,7 +2,7 @@
 <div class="alert alert-danger" *ngIf="errorMessage">
   {{errorMessage}}
 </div>
-<form novalidate (ngSubmit)="register()">
+<form #miaForm="ngForm" novalidate (ngSubmit)="register()">
   <div class="form-group mb-2">
     <label for="nome">Nome</label>
     <input [(ngModel)]="model.nome" type="text" class="form-control" name="nome" id="nome" autocomplete="off">
@@ -20,6 +20,9 @@
     <button type="submit" class="btn btn-primary">Registrami</button>
   </div>
 </form>
+<pre>
+{{miaForm}}
+</pre>
 <!-- <pre>
   {{model | json}}
 </pre> -->
